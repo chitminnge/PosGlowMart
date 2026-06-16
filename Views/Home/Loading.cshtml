@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null; // no layout, standalone page
+    ViewData["Title"] = "Loading";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/loading.css" />
+</head>
+
+<div class="loading">
+    <span>L</span>
+    <span>O</span>
+    <span>A</span>
+    <span>D</span>
+    <span>I</span>
+    <span>N</span>
+    <span>G</span>
+</div>
+
+<script>
+    // Redirect after 3 seconds
+    setTimeout(function() {
+        window.location.href = '/Home/Login';
+    }, 3000);
+</script>

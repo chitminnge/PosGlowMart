@@ -1,0 +1,94 @@
+﻿body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8fafc;
+    font-family: Arial;
+}
+
+/* LOADING TEXT */
+.loading {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+    /* EACH LETTER */
+    .loading span {
+        position: relative;
+        display: inline-block;
+    }
+
+        /* ORBIT DOT */
+        .loading span::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: orbit 1.2s linear infinite;
+        }
+
+        /* DIFFERENT COLORS FOR EACH DOT */
+        .loading span:nth-child(1)::before {
+            background: #ef4444;
+        }
+
+        .loading span:nth-child(2)::before {
+            background: #f59e0b;
+        }
+
+        .loading span:nth-child(3)::before {
+            background: #22c55e;
+        }
+
+        .loading span:nth-child(4)::before {
+            background: #3b82f6;
+        }
+
+        .loading span:nth-child(5)::before {
+            background: #a855f7;
+        }
+
+        .loading span:nth-child(6)::before {
+            background: #06b6d4;
+        }
+
+        .loading span:nth-child(7)::before {
+            background: #ec4899;
+        }
+
+/* CIRCLE ORBIT ANIMATION */
+@keyframes orbit {
+    0% {
+        transform: translateX(-50%) rotate(0deg) translateX(20px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(360deg) translateX(20px) rotate(-360deg);
+    }
+}
+
+/* FADE IN EFFECT */
+.loading {
+    animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

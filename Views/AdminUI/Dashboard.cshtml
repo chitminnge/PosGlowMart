@@ -1,0 +1,44 @@
+﻿@* @{
+    ViewData["Title"] = "Dashboard";
+} *@
+
+<div class="stats">
+    <div class="card">Products: 5483</div>
+    <div class="card">Stock: 12890</div>
+    <div class="card">Low Stock: 42</div>
+    <div class="card">Today Sales: 15,600,000 MMK</div>
+    <div class="card">Staffs: 23</div>
+</div>
+
+<div class="charts">
+    <section>
+        <h3>Top Selling Products</h3>
+        <ul>
+            <li>COSRX Snail Essence – 82%</li>
+            <li>Anua Toner – 75%</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Top Stores (Last 6 Months)</h3>
+        <ul>
+            <li>Main Branch – 58M MMK</li>
+            <li>Mandalay – 42M MMK</li>
+            <li>Hledan – 31M MMK</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Expiring Soon</h3>
+        <ul>
+            <li>COSRX Toner – 12 days left</li>
+            <li>Anua Serum – 18 days left</li>
+            <li>Beauty Of Joseon – 21 days left</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Profit Trend</h3>
+        <div id="profitChart"></div>
+    </section>
+</div>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cashier Panel</title>
+    <!-- Connect to your CSS file -->
+    <link rel="stylesheet" href="~/css/CashierPanel.css" />
+</head>
+<body>
+    <div class="cashier-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>GlowMart</h1>
+            <span>Skincare & Beauty Shop</span>
+        </header>
+
+        <!-- Main Panels -->
+        <div class="main-panels">
+            <!-- Left: Categories -->
+            <div class="left-panel">
+                @RenderSection("Categories", required: false)
+            </div>
+
+            <!-- Middle: Scanner -->
+            <div class="middle-panel">
+                @RenderSection("Scanner", required: false)
+            </div>
+
+            <!-- Right: Cart + Payment -->
+            <div class="right-panel">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

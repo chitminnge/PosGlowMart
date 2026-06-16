@@ -1,0 +1,189 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #eaf6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 40%;
+    background: linear-gradient(135deg, #6ecbff, #2196f3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    color: white;
+}
+
+    .left-panel h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+.tab-switch-wrapper {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tab-switch {
+    position: relative;
+    width: 180px;
+    height: 50px;
+    background: #fff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+    .tab.active {
+        color: #2196f3;
+    }
+
+.slider-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #6ecbff, #2196f3);
+    border-radius: 25px;
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 60%;
+    overflow: hidden;
+    position: relative;
+}
+
+.form-wrapper {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.form-section {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* LOGO SECTION */
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.role-icon {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #2196f3;
+    padding: 4px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(33,150,243,0.2);
+}
+
+.logo-section h2 {
+    margin-top: 12px;
+    color: #2196f3;
+    font-size: 26px;
+}
+
+/* INPUT */
+.input-field {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+    padding: 8px 0;
+}
+
+    .input-field i {
+        color: #2196f3;
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    .input-field input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 15px;
+    }
+
+/* FORGOT PASSWORD */
+.forgot-link {
+    font-size: 13px;
+    color: #2196f3;
+    text-decoration: none;
+    text-align: right;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+    .forgot-link:hover {
+        text-decoration: underline;
+    }
+
+/* BUTTON */
+.login-button {
+    background: linear-gradient(to right, #2196f3, #6ecbff);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    width: 120px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: 0.3s;
+}
+
+    .login-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(33,150,243,0.4);
+    }

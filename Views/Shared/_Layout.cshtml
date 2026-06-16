@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - GlowMart</title>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Welcome Back!</h2>
+            <div class="tab-switch-wrapper">
+                <div class="tab-switch">
+                    <div class="slider-indicator" id="slider"></div>
+                    <div class="tab active" data-index="0">Admin</div>
+                    <div class="tab" data-index="1">Cashier</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="form-wrapper" id="formWrapper">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/login.js"></script>
+</body>
+</html>

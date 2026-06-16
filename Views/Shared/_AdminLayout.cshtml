@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="~/css/admin.css" />
+    <script src="~/js/admin.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a asp-controller="AdminUI" asp-action="Dashboard">Dashboard</a></li>
+                <li><a asp-controller="AdminUI" asp-action="Employee management">Category </a></li>
+                <li><a asp-controller="AdminUI" asp-action="Categories">Category Management</a></li>
+                <li><a asp-controller="AdminUI" asp-action="Stock">Stock Management</a></li>
+                <li><a asp-controller="AdminUI" asp-action="Sales">Sale Management</a></li>
+                <li><a asp-controller="AdminUI" asp-action="Sales">Branch Management</a></li> 
+                <li><a asp-controller="AdminUI" asp-action="Sales">Reports & Analytics</a></li>
+                <li><a asp-controller="AdminUI" asp-action="Settings">Settings</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>
