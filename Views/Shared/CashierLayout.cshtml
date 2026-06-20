@@ -2,35 +2,35 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Cashier Panel</title>
-    <!-- Connect to your CSS file -->
+    <title>@ViewData["Title"] - GlowMart POS</title>
     <link rel="stylesheet" href="~/css/CashierPanel.css" />
+    <script src="~/js/cashier.js"></script>
 </head>
 <body>
-    <div class="cashier-container">
-        <!-- Header -->
-        <header class="header">
-            <h1>GlowMart</h1>
-            <span>Skincare & Beauty Shop</span>
-        </header>
+    <!-- Navigation -->
+    @Html.Partial("_CashierHeader")
 
-        <!-- Main Panels -->
-        <div class="main-panels">
-            <!-- Left: Categories -->
-            <div class="left-panel">
-                @RenderSection("Categories", required: false)
-            </div>
+    <div class="main-container">
+        <!-- Categories (slide panel) -->
+        <aside class="categories">
+        
+            @RenderSection("Categories", required: false)
+        </aside>
 
-            <!-- Middle: Scanner -->
-            <div class="middle-panel">
-                @RenderSection("Scanner", required: false)
-            </div>
+        <!-- Scanner -->
+        <aside class="scanner">
+            @RenderSection("Scanner", required: false)
+        </aside>
 
-            <!-- Right: Cart + Payment -->
-            <div class="right-panel">
-                @RenderBody()
-            </div>
-        </div>
+        <!-- Cart -->
+        <main class="sale">
+            @RenderBody()
+        </main>
     </div>
+
+    <!-- Pay section -->
+    <footer>
+        <p>Total: @RenderSection("Total", required: false)</p>
+    </footer>
 </body>
 </html>

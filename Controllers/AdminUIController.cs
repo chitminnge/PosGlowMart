@@ -4,6 +4,7 @@ namespace GlowMart.Controllers
 {
     public class AdminUIController : Controller
     {
+      
         public IActionResult Index()
         {
             return View();

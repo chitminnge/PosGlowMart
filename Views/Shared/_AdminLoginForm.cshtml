@@ -1,11 +1,4 @@
-﻿@* <div class="admin-form">
-    <h3>Admin Login</h3>
-    <form action="/AdminLogin/Login" method="post">
-        <input type="email" name="Email" placeholder="Email Address" required />
-        <input type="password" name="Password" placeholder="Password" required />
-        <button type="submit">Login</button>
-    </form>
-</div> *@
+﻿@model GlowMart.Models.ViewModels.LoginViewModel
 
 <div class="form-section">
     <div class="logo-section">
@@ -15,17 +8,22 @@
 
     <form asp-controller="Admin" asp-action="Login" method="post">
         <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="Email" placeholder="Email Address" required />
+            <i class="fas fa-user"></i>
+            <input asp-for="UserName" class="form-control" placeholder="Enter UserName" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
 
         <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" name="Password" placeholder="Password" required />
+            <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
-
-        <a href="#" class="forgot-link">Forgot Password?</a>
 
         <button type="submit" class="login-button">LOGIN</button>
     </form>
 </div>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger mt-3">@TempData["Error"]</div>
+}

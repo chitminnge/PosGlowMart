@@ -22,6 +22,9 @@ namespace GlowMart.Models
 
         public int Quantity { get; set; }
 
+
+        public DateTime? StockInDate { get; set; }
+
         public DateTime? ExpiredDate { get; set; }
 
         // Navigation

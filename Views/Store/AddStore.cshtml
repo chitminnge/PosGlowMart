@@ -1,0 +1,28 @@
+﻿@model GlowMart.Models.ViewModels.StoreViewModel
+
+
+<h1>AddStore</h1>
+<form asp-action="AddStore" asp-controller="Store" method="post">
+    <div>
+        <label asp-for="StoreName"></label>
+        <input asp-for="StoreName" />
+        <span asp-validation-for="StoreName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Address"></label>
+        <input asp-for="Address" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

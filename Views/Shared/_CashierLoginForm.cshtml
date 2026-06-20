@@ -1,40 +1,4 @@
-﻿@* @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Cashier Login";
-}
-
-<div class="cashier-form">
-    <h3>Cashier Login</h3>
-    <form asp-controller="Cashier" asp-action="Login" method="post">
-        <input type="text" name="OtpCode" placeholder="Enter Your OTP Code" required />
-        <button type="submit">Login</button>
-    </form>
-
-    @if (ViewBag.Error != null)
-    {
-        <p style="color:red">@ViewBag.Error</p>
-    }
-</div> *@
-@* 
-<div class="form-section">
-    <div class="logo-section">
-        <img src="/loginImage/cashier.jpg" alt="Cashier Icon" class="role-icon">
-        <h2>Cashier</h2>
-    </div>
-
-    <form asp-controller="Cashier" asp-action="Login" method="post">
-        <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" name="OtpCode"placeholder="Enter Your OTP Code" required>
-        </div>
-
-        <button type="submit" class="login-button">
-            LOGIN
-        </button>
-    </form>
-
-   
-</div> *@
+﻿@model GlowMart.Models.ViewModels.LoginViewModel
 
 <div class="form-section">
     <div class="logo-section">
@@ -45,9 +9,21 @@
     <form asp-controller="Cashier" asp-action="Login" method="post">
         <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" name="OtpCode" placeholder="Enter Your OTP Code" required />
+            <input asp-for="UserName" class="form-control" placeholder="Enter UserName" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
 
         <button type="submit" class="login-button">LOGIN</button>
     </form>
 </div>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger mt-3">@TempData["Error"]</div>
+}

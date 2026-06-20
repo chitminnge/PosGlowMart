@@ -1,0 +1,39 @@
+﻿@model GlowMart.Models.ViewModels.StaffViewModel
+
+<h2>Add Staff</h2>
+<form asp-action="AddStaff" method="post">
+    <div>
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="RoleName"></label>
+        <select asp-for="RoleName">
+            <option value="Admin">Admin</option>
+            <option value="Cashier">Cashier</option>
+        </select>
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="StoreId">Store</label>
+        <select asp-for="StoreId" asp-items="@(new SelectList(ViewBag.Stores, "StoreId", "StoreName"))"></select>
+        <span asp-validation-for="StoreId" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Save</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
