@@ -4,33 +4,42 @@
     <meta charset="utf-8" />
     <title>@ViewData["Title"] - GlowMart POS</title>
     <link rel="stylesheet" href="~/css/CashierPanel.css" />
-    <script src="~/js/cashier.js"></script>
+     <script src="~/js/Cashier.js"></script> 
 </head>
 <body>
     <!-- Navigation -->
-    @Html.Partial("_CashierHeader")
+    @* @Html.Partial("_CashierHeader") *@
 
     <div class="main-container">
-        <!-- Categories (slide panel) -->
-        <aside class="categories">
-        
+        <!-- Categories (left panel) -->
+        <aside class="Categories">
             @RenderSection("Categories", required: false)
         </aside>
 
-        <!-- Scanner -->
-        <aside class="scanner">
+        <!-- Scanner (middle panel) -->
+        <section class="scanner">
             @RenderSection("Scanner", required: false)
-        </aside>
-
-        <!-- Cart -->
-        <main class="sale">
-            @RenderBody()
-        </main>
+        </section>
+        <section class="cashshift">
+            @RenderSection("cashshift",required:false)
+        </section>
+        <!-- Cart (right panel) -->
+        <section class="cart">
+            @RenderSection("Cart", required: false)
+        </section>
     </div>
 
-    <!-- Pay section -->
-    <footer>
-        <p>Total: @RenderSection("Total", required: false)</p>
+    <!-- Footer: Payment + Shift info -->
+    <footer class="pay-section">
+        <div class="total">
+            <strong>Total:</strong> @RenderSection("Total", required: false)
+        </div>
+        <div class="payment-options">
+            @RenderSection("Payment", required: false)
+        </div>
+        <div class="shift-info">
+            @RenderSection("ShiftInfo", required: false)
+        </div>
     </footer>
 </body>
 </html>

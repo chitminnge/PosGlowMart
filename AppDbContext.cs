@@ -17,6 +17,8 @@ namespace GlowMart
         public DbSet<StoreStock> StoreStocks { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SaleItems { get; set; }
+        public DbSet<Membership> Memberships { get; set; }
+        public DbSet<Level> Levels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -127,9 +129,9 @@ namespace GlowMart
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<SaleItem>()
-                .HasOne(si => si.StoreStock)
-                .WithMany(ss => ss.SaleItems)
-                .HasForeignKey(si => si.StockId)
+                .HasOne(si => si.Variant)
+                .WithMany(v => v.SaleItems)
+                .HasForeignKey(si => si.VariantId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<SaleItem>()
@@ -139,6 +141,10 @@ namespace GlowMart
             modelBuilder.Entity<SaleItem>()
                 .Property(si => si.TotalPrice)
                 .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<Level>()
+                .Property(x => x.DiscountPercent)
+                .HasPrecision(5, 2);
         }
     }
 }

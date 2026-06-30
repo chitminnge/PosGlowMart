@@ -55,7 +55,7 @@ namespace GlowMart.Controllers
 
             // Redirect based on role
             if (staff.RoleName == "Cashier")
-                return RedirectToAction("Dashboard", "CashierUI");
+                return RedirectToAction("opening", "Shift");
             else if (staff.RoleName == "Admin")
                 return RedirectToAction("Dashboard", "AdminUI");
             else

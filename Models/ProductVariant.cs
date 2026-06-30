@@ -32,9 +32,16 @@ namespace GlowMart.Models
         [NotMapped]
         public decimal Profit => SalePrice - CostPrice;
 
+        public int MinStock { get; set; } = 5;
+
         public bool IsActive { get; set; } = true;
+
+        //this is I add new cloum 
+        public DateTime? ExpiredAt { get; set; }
 
         // Navigation
         public ICollection<StoreStock> StoreStocks { get; set; }
+
+        public ICollection<SaleItem> SaleItems { get; set; }
     }
 }

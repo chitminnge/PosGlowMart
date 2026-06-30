@@ -23,6 +23,11 @@ namespace GlowMart.Models
         [ForeignKey(nameof(StaffId))]
         public Staff Staff { get; set; }
 
+        public Guid? MemberId { get; set; }
+
+        [ForeignKey(nameof(MemberId))]
+        public Membership? Member { get; set; }
+
         [Required]
         public Guid ShiftId { get; set; }
 

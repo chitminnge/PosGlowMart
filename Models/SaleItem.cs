@@ -15,10 +15,10 @@ namespace GlowMart.Models
         public Sale Sale { get; set; }
 
         [Required]
-        public Guid StockId { get; set; }
+        public Guid VariantId { get; set; }
 
-        [ForeignKey(nameof(StockId))]
-        public StoreStock StoreStock { get; set; }
+        [ForeignKey(nameof(VariantId))]
+        public ProductVariant Variant { get; set; }
 
         public int Quantity { get; set; }
 

@@ -229,5 +229,7 @@ D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\1d15k7uotd-{0}-m
 D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\9qj2sn388s-{0}-jjsuc0puko-jjsuc0puko.gz
 D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\lza8timjgd-{0}-9vr69e8ynj-9vr69e8ynj.gz
 D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\uhmrcso3gm-{0}-z249m9xisg-z249m9xisg.gz
-D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\wt52b3oprq-{0}-9q5rmbv6vw-9q5rmbv6vw.gz
+D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\41io48md8l-{0}-dqnaydrcpd-dqnaydrcpd.gz
+D:\Finally POS\POSsolution\GlowMart\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\uhmrcso3gm-{0}-o4enyzeu2z-o4enyzeu2z.gz
+D:\Finally POS\POSsolution\GlowMart\obj\Debug\net9.0\compressed\wt52b3oprq-{0}-x0oiszzfon-x0oiszzfon.gz

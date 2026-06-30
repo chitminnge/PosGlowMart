@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - GlowMart</title>
+    <link rel="stylesheet" href="~/css/shift.css" />
+</head>
+<body>
+
+    <main role="main" class="container">
+        @RenderBody()   <!-- 🔹 Required: injects child view content -->
+    </main>
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2026 - GlowMart</p>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

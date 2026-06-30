@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GlowMart")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e4b65b5f0dec05e16df0ec7464d1b2ed52be3e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01b40bf15240f91a5d2751a377a562aca83e87c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("GlowMart")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GlowMart")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

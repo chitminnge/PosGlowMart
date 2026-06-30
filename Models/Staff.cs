@@ -30,6 +30,11 @@ namespace GlowMart.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
+        [StringLength(20)]
+        public string? Phone { get; set; }
+
+        public DateTime? LastLoginAt { get; set; }
+
         public bool IsActive { get; set; } = true;
 
         // Navigation

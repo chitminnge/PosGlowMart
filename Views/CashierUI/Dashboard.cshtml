@@ -1,1 +1,143 @@
-﻿
+﻿@model IEnumerable<GlowMart.Models.ViewModels.CartItem>
+
+
+@section Categories {
+    <h3>Skincare</h3>
+    <ul>
+        <li>Serum</li>
+        <li>Moisturizer</li>
+        <li>Cleanser</li>
+        <li>Toner</li>
+        <li>Sunscreen</li>
+        <li>Exfoliator</li>
+        <li>Mask</li>
+        <li>Eye Cream</li>
+    </ul>
+}
+
+
+
+@section Scanner {
+    <div class="barcode-card">
+        <div class="barcode-header">
+            <i class="fas fa-qrcode" style="color:#1b3b6b;"></i>
+            <h4 id="scannerTitle">Barcode Scanner</h4>
+            <label class="scan-switch">
+                <input type="checkbox" id="phoneScannerToggle">
+                <span class="scan-switch-slider"></span>
+                <span id="scannerModeLabel">Scanner Mode</span>
+            </label>
+        </div>
+        <div class="barcode-input-area">
+            <div class="input-group" id="scanInputGroup">
+                <input type="text" id="barcodeInput"
+                       placeholder="Scan or enter barcode" autofocus />
+                <button id="scanBtn">
+                    <i class="fas fa-search"></i>
+                    <span id="scanBtnText">Scan</span>
+                </button>
+            </div>
+        </div>
+    </div>
+}
+@section cashshift{
+
+}
+@section Cart {
+    <div class="member-search-mini">
+        <div class="member-search-input-wrap" id="memberSearchWrap">
+            <input type="text" id="memberSearchInput"
+                   placeholder="🔍 Enter Member CardNumber"
+                   class="member-mini-input">
+            <button id="memberSearchBtn" class="member-mini-btn">Search</button>
+        </div>
+    </div>
+
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Subtotal</th>
+                <th>Discount</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cartTableBody">
+            @if (Model != null && Model.Any())
+            {
+              @foreach (var item in Model)
+{
+    <tr data-barcode="@item.Barcode">
+        <td>@item.ProductName</td>
+        <td class="qty">
+            <button type="button" class="qty-minus bg-green">−</button>
+            <span class="qty-value">@item.Quantity</span>
+            <button type="button" class="qty-plus bg-green">+</button>
+        </td>
+        <td>@item.SalePrice.ToString("N0") MMK</td>
+        <td>@item.Subtotal.ToString("N0") MMK</td>
+        <td>@item.DiscountAmount.ToString("N0") (@item.DiscountPercent %)</td>
+        <td class="total">@item.TotalPrice.ToString("N0") MMK</td>
+        <td><button class="remove-btn">Remove</button></td>
+    </tr>
+}
+
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7">Cart is empty</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
+
+@section Total {
+    <div id="summary">
+        <p id="cartTotal">Grand Total: @Model.Sum(m => m.TotalPrice).ToString("N0") MMK</p>
+    </div>
+}
+
+
+
+@section Payment {
+    <button class="btn btn-info">KPay</button>
+    <button class="btn btn-info">Card</button>
+    <button class="btn btn-info">WavePay</button>
+    <button class="btn btn-success">PAY NOW</button>
+}
+
+@section ShiftInfo {
+    <p>Opening: @ViewBag.OpeningBalance MMK</p>
+    <p id="actualAmount">Actual Amount: @ViewBag.ActualSalesAmount MMK</p>
+
+    <!-- Hidden field for ShiftId -->
+    <input type="hidden" id="shiftId" value="@ViewBag.ShiftId" />
+
+    <!-- Shift Closing Button -->
+    <button class="btn btn-danger" onclick="openShiftClosing()">Shift Closing</button>
+
+    <!-- Modal -->
+    <div id="shiftClosingBox" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeShiftClosing()">×</span>
+            <h2>Shift Closing</h2>
+            <p>Please enter Closing Balance</p>
+
+            <input type="number" id="closingBalance" placeholder="e.g. 50000" />
+
+            <div class="actions">
+                <button class="btn btn-success" onclick="saveClosing()">Confirm</button>
+                <button class="btn btn-secondary" onclick="closeShiftClosing()">Cancel</button>
+            </div>
+        </div>
+    </div>
+}
+
+
